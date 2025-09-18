@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - Agora Francia</title>
+    <link rel="stylesheet" href="styleA.css">
+    <style type="text/css">
+        /* Body and basic styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #f5e6d3;
+            border-bottom: 2px solid #d3c1a5;
+        }
+
+        /* Remove the navigation bar as requested */
+        .nav-bar {
+            display: none;
+        }
+
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 80%;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #5b4636;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f5e6d3;
+            font-weight: bold;
+        }
+
+        /* Button styles to match notifications */
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px 0;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .retour-accueil {
+            background-color: #a3a3a3;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px 0;
+        }
+
+        .retour-accueil:hover {
+            background-color: #888888;
+            transform: scale(1.05);
+        }
+
+        /* Notification section */
+        .notification {
+            display: flex;
+            align-items: center;
+            background-color: #fef1d1;
+            color: #5b4636;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .notification .icon {
+            margin-right: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f5e6d3;
+            border-top: 2px solid #d3c1a5;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Logo Agora</div>
+        <main class="container">
+        <!-- Bouton pour revenir à l'accueil -->
+        <button class="btn retour-accueil">Retour à l'accueil</button>
+
+        <h1>Votre Panier</h1>
+        <p>Voici les articles que vous avez ajoutés à votre panier :</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Article</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Article 1</td>
+                    <td>Description de l'article 1</td>
+                    <td>10€</td>
+                    <td>1</td>
+                    <td>10€</td>
+                </tr>
+                <tr>
+                    <td>Article 2</td>
+                    <td>Description de l'article 2</td>
+                    <td>15€</td>
+                    <td>2</td>
+                    <td>30€</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" style="text-align: right;">Total :</td>
+                    <td>40€</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <button class="btn">Passer la commande</button>
+
+        <!-- Notification section -->
+        <div class="notification">
+            <span class="icon">🔔</span>
+            <p>Un nouvel article est disponible dans votre catégorie sélectionnée.</p>
+        </div>
+    </main>
+    </header>
+
+    
+
+    <footer class="footer">
+        <p>&copy; 2024 Agora Francia. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

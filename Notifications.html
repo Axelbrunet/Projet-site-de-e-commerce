@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications avec Critères - Agora Francia</title>
+    <!-- Importation du fichier styleA.css -->
+    <link rel="stylesheet" href="styleA.css">
+    <style>
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #4d2b1f;
+            margin-bottom: 20px;
+            font-family: 'Trajan Pro', serif;
+        }
+
+        .notification {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #fbf2e9;
+            border-left: 4px solid #af8c62;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification-icon {
+            font-size: 24px;
+            color: #4d2b1f;
+            margin-right: 15px;
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #4d2b1f;
+        }
+
+        .notification-message {
+            font-size: 16px;
+            color: #4d4d4d;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            color: #4d2b1f;
+        }
+
+        select, input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Garamond', serif;
+        }
+
+        .button-group {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #4d2b1f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Garamond', serif;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background-color: #6b3e2b;
+        }
+
+        .return-home {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #4d2b1f;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Garamond', serif;
+            transition: transform 0.3s ease;
+        }
+
+        .return-home:hover {
+            transform: scale(1.1);
+            background-color: #6b3e2b;
+        }
+    </style>
+</head>
+<body class="accueil">
+
+<div class="header">
+    <div class="logo">
+        <img src="temple-logo.png" alt="Logo" class="temple-logo">
+        <h1>Agora Francia</h1>
+    </div>
+</div>
+
+<div class="container">
+    <a href="Accueil.html" class="return-home">Retour à l'accueil</a>
+    <h2>Notifications avec Critères</h2>
+
+    <form id="criteriaForm">
+        <!-- Critères de recherche -->
+        <div class="form-group">
+            <label for="category">Catégorie de l'article</label>
+            <select id="category" name="category">
+                <option value="">Sélectionner une catégorie</option>
+                <option value="electronics">Électronique</option>
+                <option value="clothing">Vêtements</option>
+                <option value="furniture">Meubles</option>
+                <option value="books">Livres</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="priceMin">Prix minimum (€)</label>
+            <input type="number" id="priceMin" name="priceMin" placeholder="Ex. 10">
+        </div>
+
+        <div class="form-group">
+            <label for="priceMax">Prix maximum (€)</label>
+            <input type="number" id="priceMax" name="priceMax" placeholder="Ex. 1000">
+        </div>
+
+        <div class="form-group">
+            <label for="condition">Condition de l'article</label>
+            <select id="condition" name="condition">
+                <option value="">Sélectionner l'état de l'article</option>
+                <option value="new">Neuf</option>
+                <option value="used">Occasion</option>
+                <option value="defective">Défectueux</option>
+            </select>
+        </div>
+
+        <div class="button-group">
+            <button type="submit" class="btn">Afficher les notifications</button>
+        </div>
+    </form>
+
+    <div id="notifications">
+        <!-- Les notifications apparaîtront ici dynamiquement -->
+    </div>
+</div>
+
+<script>
+    document.getElementById('criteriaForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const category = document.getElementById('category').value;
+        const priceMin = document.getElementById('priceMin').value;
+        const priceMax = document.getElementById('priceMax').value;
+        const condition = document.getElementById('condition').value;
+
+        const notifications = [
+            { title: "Nouvel article en Électronique", message: "Un ordinateur portable à 500 € est disponible.", category: "electronics", price: 500, condition: "new" },
+            { title: "Vêtements en promotion", message: "Un T-shirt d'occasion pour 15 €.", category: "clothing", price: 15, condition: "used" }
+        ];
+
+        const filteredNotifications = notifications.filter(n => {
+            return (!category || n.category === category) &&
+                   (!priceMin || n.price >= priceMin) &&
+                   (!priceMax || n.price <= priceMax) &&
+                   (!condition || n.condition === condition);
+        });
+
+        const notificationsDiv = document.getElementById('notifications');
+        notificationsDiv.innerHTML = '';
+        filteredNotifications.forEach(n => {
+            const notificationElement = `
+                <div class="notification">
+                    <div class="notification-icon">🔔</div>
+                    <div class="notification-content">
+                        <div class="notification-title">${n.title}</div>
+                        <div class="notification-message">${n.message}</div>
+                    </div>
+                </div>
+            `;
+            notificationsDiv.innerHTML += notificationElement;
+        });
+
+        if (filteredNotifications.length === 0) {
+            notificationsDiv.innerHTML = `
+                <div class="notification">
+                    <div class="notification-icon">⚠️</div>
+                    <div class="notification-content">
+                        <div class="notification-title">Aucune notification trouvée</div>
+                        <div class="notification-message">Aucun article ne correspond à vos critères.</div>
+                    </div>
+                </div>
+            `;
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tout Parcourir</title>
+	<link rel="stylesheet" href="styleA.css">
+	<style>
+		body {
+		    font-family: Arial, sans-serif;
+		    margin: 0;
+		    padding: 0;
+		    background-color: #F8ECE0;
+		}
+
+		h3{
+			background-color: black;
+			color: white;
+			text-align: center;
+			border-radius: 5px;
+			height: 30px;
+		}
+
+		.container {
+		    display: flex; /* Utilisation du Flexbox pour aligner les colonnes */
+		    justify-content: space-between;
+		    padding: 10px;
+		}
+
+		#leftcolumn, #middlecolumn, #rightcolumn {
+		    width: 33%; /* Chaque colonne prend 30% de la largeur */
+		    padding: 20px;
+		    box-sizing: border-box; /* Pour inclure padding et border dans la largeur totale */
+		    border-radius: 5px;
+		    border: 1;
+
+		}
+
+		#leftcolumn {
+		    background-color: #F5A9F2;
+		}
+
+		#middlecolumn {
+		    background-color: #F781D8;
+		}
+
+		#rightcolumn {
+		    background-color: #FA58AC;
+		}
+
+		.tableau {
+		    max-width: 100%; /* Les images s'adaptent à la taille de leur conteneur */
+		    height: auto;
+		}
+
+		.voir-plus {
+		    display: inline-block;
+		    margin-top: 10px;
+		    padding: 10px 20px;
+		    font-size: 16px;
+		    color: white;
+		    background-color: darkslategrey;
+		    border: 1;
+		    border-radius: 5px;
+		    text-align: center;
+		    cursor: pointer;
+		}
+
+		.voir-plus:hover {
+		    background-color: lightslategrey; /* Couleur plus sombre au survol */
+		}
+
+				
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<div class="box-choix-left">
+	      <a href="Accueil.html"><button> Accueil </button></a><br>
+	      <a href="ToutParcourir.html"><button> Tout Parcourir </button></a><br>
+      	</div>
+
+		<div class="box-choix-right">
+	      <a href="Notifications.html"><button> Notifications </button></a><br>
+	      <a href="Panier.html"><button> Panier </button></a><br>
+	      <a href="VotreCompte.html"><button> Votre Compte </button></a>
+      	</div> 
+      	
+      <div class="logo">
+        <img src="logo site.png" alt="Logo Agora" class="temple-logo">
+        <h1>Tout Parcourir</h1>
+      </div>  
+
+         
+    </div>
+
+    
+
+    <div class="sous-navigation">
+    	<a href="ToutParcourir.html"><button>Tout les articles</button></a>
+      <a href="ParcourirRéguliers.html"><button>Articles réguliers</button></a>
+      <a href="ParcourirHautDeGamme.html"><button>Articles haut de gamme</button></a>
+      <a href="ParcourirRares.html"><button>Articles rares</button></a>
+    </div>
+
+    <div class="container">
+        <div id="leftcolumn">
+            <h3>Articles réguliers</h3>
+            <p>Oeuvre de Sonia Delaunay</p>
+            <a href="oeuvre Sonia Delaunay.jpg">
+                <img class="tableau" src="oeuvre Sonia Delaunay.jpg" alt="Tableau S. Delaunay" width="300">
+            </a>
+            <ul>
+                <li>Date :</li>
+                <li>Composition :</li>
+                <li>Prix :</li>
+            </ul>
+            <a href="ParcourirRéguliers.html"><button class="voir-plus">Voir plus</button></a>
+            
+        </div>
+        <div id="middlecolumn">
+            <h3>Articles haut de gamme</h3>
+            <p>Oeuvre de Van Gogh, La nuit étoilée</p>
+            <a href="oeuvre la nuit étoilée.jpg">
+                <img class="tableau" src="oeuvre la nuit étoilée.jpg" alt="Tableau Van Gogh" width="200">
+            </a>
+            <ul>
+                <li>Date :</li>
+                <li>Composition :</li>
+                <li>Prix :</li>
+            </ul>
+            <a href="ParcourirHautDeGamme.html"><button class="voir-plus">Voir plus</button></a>
+        </div>
+        <div id="rightcolumn">
+            <h3>Articles rares</h3>
+            <p>Oeuvre detournée du Jeu de Paume</p>
+            <a href="oeuvre jeu de paume détournée.jpg">
+                <img class="tableau" src="oeuvre jeu de paume détournée.jpg" alt="Tableau Van Gogh" width="300">
+            </a>
+            <ul>
+                <li>Date :</li>
+                <li>Composition :</li>
+                <li>Prix :</li>
+            </ul>
+            <a href="ParcourirRares.html"><button class="voir-plus">Voir plus</button></a>
+        </div>
+    </div>
+
+    <div class="footer">
+      <p>© 2024 Agora Francia - Inspiré par l'Antiquité</p>
+    </div>
+</body>
+</html>

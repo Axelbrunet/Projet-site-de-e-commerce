@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles à Vendre</title>
+    <link rel="stylesheet" href="styleA.css">
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+
+        /* Conteneur principal */
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Styles pour chaque case */
+        .article-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .article-card:hover {
+            transform: scale(1.05); /* Agrandissement au survol */
+        }
+
+        .article-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .article-card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .article-card p {
+            font-size: 14px;
+            color: #555;
+            padding: 0 10px;
+        }
+
+        .article-card .TypeVente {
+            font-size: 16px;
+            color: #007BFF;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .article-card button {
+            background-color: darkslategrey;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 10px 0 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .article-card button:hover {
+            background-color: lightslategrey;
+        }
+
+        .vente-article {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: black;
+            background-color: #F2F2F2;
+            border: 1;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .vente-article:hover {
+            background-color: #E6E6E6; /* Couleur plus sombre au survol */
+        }
+
+        .BoxBouttons {
+            display: flex;
+            flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #F6CEF5;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="box-choix-left">
+          <a href="Accueil.html"><button> Accueil </button></a><br>
+          <a href="ToutParcourir.html"><button> Tout Parcourir </button></a><br>
+        </div>
+
+        <div class="box-choix-right">
+          <a href="Notifications.html"><button> Notifications </button></a><br>
+          <a href="Panier.html"><button> Panier </button></a><br>
+          <a href="VotreCompte.html"><button> Votre Compte </button></a>
+        </div> 
+
+      <div class="logo">
+        <img src="logo site.png" alt="Logo Agora" class="temple-logo">
+        <h1>Articles rares</h1>
+      </div>
+    </div>
+
+
+
+    <div class="sous-navigation">
+        <a href="ToutParcourir.html"><button>Tout les articles</button></a>
+      <a href="ParcourirRéguliers.html"><button>Articles réguliers</button></a>
+      <a href="ParcourirHautDeGamme.html"><button>Articles haut de gamme</button></a>
+      <a href="ParcourirRares.html"><button>Articles rares</button></a>
+    </div>
+
+    <div class="sort-container">
+        
+        <div class="checkbox-container">
+            <h3>Trier par :</h3>
+            <label>
+                <input type="checkbox" name="sort" value="immediat">
+                Vente immédiate
+            </label>
+            <label>
+                <input type="checkbox" name="sort" value="négo">
+                Vente par négociation
+            </label>
+            <label>
+                <input type="checkbox" name="sort" value="encheres">
+                Vente aux enchères
+            </label>
+        </div>
+        <button class="apply-button">Appliquer</button>
+    </div>
+
+
+    <div class="container">
+        <!-- Article 1 -->
+        <div class="article-card">
+            <img class="tableau" src="oeuvre Joconde chauve.jpeg" alt="Tableau de De Vinci" width="300">
+            <h2>Oeuvre La Joconde détournée</h2>
+            <p>Une description rapide de cet article.</p>
+            <div class="TypeVente">Vente aux enchères</div>
+            <button>Acheter maintenant</button>
+        </div>
+        <!-- Article 2 -->
+        <div class="article-card">
+            <img class="tableau" src="oeuvre le cri détourné.jpg" alt="Tableau de ..." width="300">
+            <h2>Oeuvre Le Cri détourné</h2>
+            <p>Une description rapide de cet article.</p>
+            <div class="TypeVente">Vente aux enchères</div>
+            <button>Acheter maintenant</button>
+        </div>
+        <!-- Article 3 -->
+        <div class="article-card">
+            <img class="tableau" src="oeuvre jeu de paume détournée.jpg" alt="Tableau de ..." width="300">
+            <h2>Oeuvre Jeu de Paume détourné</h2>
+            <p>Une description rapide de cet article.</p>
+            <div class="TypeVente">Vente aux enchères</div>
+            <button>Acheter maintenant</button>
+        </div>
+        <!-- Article 4 -->
+        <div class="article-card">
+            <img class="chaussure" src="chaussure clown.jpeg" alt="Chaussure Clown" width="300">
+            <h2>Paire de chaussure clown</h2>
+            <p>Une description rapide de cet article.</p>
+            <div class="TypeVente">Vente immédiate</div>
+            <button>Acheter maintenant</button>
+        </div>
+        <!-- Article 5 -->
+        <div class="article-card">
+            <img class="chaussure" src="chaussure retour futur.jpeg" alt="Chaussure RT" width="300">
+            <h2>Paire de chaussure issue de Retour vers le Futur</h2>
+            <p>Une description rapide de cet article.</p>
+            <div class="TypeVente">Vente immédiate</div>
+            <button>Acheter maintenant</button>
+        </div>
+        <!-- Article 6 -->
+        <div class="article-card">
+            <img class="chaussure" src="chaussure poisson.jpeg" alt="Chaussure poisson" width="300">
+            <h2>Paire de chaussure poisson</h2>
+            <p>Une description rapide de cet article.</p>
+            <div class="TypeVente">Vente immédiate</div>
+            <button>Acheter maintenant</button>
+        </div>
+    </div>
+
+    <div class="footer">
+      <p>© 2024 Agora Francia - Inspiré par l'Antiquité</p>
+    </div>
+</body>
+</html>
